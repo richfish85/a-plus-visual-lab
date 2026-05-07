@@ -1,0 +1,9 @@
+card_id,deck,file,type,uses_assets,learner_action,status,validation
+CARD-001,Connector Matching Cards,cards/connector-matching-cards.html,image card,VIS-001,Match RJ45 cable to Ethernet port,final candidate,Learner pairs VIS-001 with MATCH-001
+CARD-002,Connector Matching Cards,cards/connector-matching-cards.html,image card,VIS-002,Match Ethernet port to RJ45 cable,final candidate,Learner pairs VIS-002 with MATCH-001
+CARD-003,Connector Matching Cards,cards/connector-matching-cards.html,image card,VIS-003,Identify HDMI as display path,final candidate,Learner places VIS-003 with MATCH-002
+CARD-004,Connector Matching Cards,cards/connector-matching-cards.html,image card,VIS-004,Sort USB-A and USB-C shapes,final candidate,Learner places VIS-004 with MATCH-003
+MATCH-001,Connector Matching Cards,cards/connector-matching-cards.html,match card,VIS-001;VIS-002,Pair RJ45 cable and Ethernet port,final candidate,Learner explains cable-to-port match
+MATCH-002,Connector Matching Cards,cards/connector-matching-cards.html,match card,VIS-003,Connect HDMI to display path,final candidate,Learner explains HDMI display use
+MATCH-003,Connector Matching Cards,cards/connector-matching-cards.html,match card,VIS-004,Compare USB-A and USB-C,final candidate,Learner identifies shape difference
+ACTION-001,Connector Matching Cards,cards/connector-matching-cards.html,action card,none,Follow one-match-at-a-time flow,final candidate,Learner completes one round without skipping steps

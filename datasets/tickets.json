@@ -1,0 +1,57 @@
+[
+  {
+    "id": "APLUS-001",
+    "domain": "Hardware",
+    "station": "Hardware Bench",
+    "problem": "Desktop powers on but shows no display.",
+    "visual_clue": "Monitor power light is orange and the desktop fans spin.",
+    "learner_action": "Check monitor input, video cable, RAM seating, and graphics connection.",
+    "success_condition": "Learner identifies one likely cause and documents the first safe check."
+  },
+  {
+    "id": "APLUS-002",
+    "domain": "Networking",
+    "station": "Network Table",
+    "problem": "Laptop connects to Wi-Fi but cannot load websites.",
+    "visual_clue": "Wi-Fi icon says connected but the browser times out.",
+    "learner_action": "Check IP address, gateway, DNS, and router status.",
+    "success_condition": "Learner explains why Wi-Fi connection and internet access are different."
+  },
+  {
+    "id": "APLUS-003",
+    "domain": "Operating Systems",
+    "station": "OS and VM Station",
+    "problem": "A Windows VM boots slowly and has low disk space.",
+    "visual_clue": "Storage bar is red and startup takes more than two minutes.",
+    "learner_action": "Check startup apps, disk usage, updates, and temporary files.",
+    "success_condition": "Learner documents one safe cleanup action and one follow-up recommendation."
+  },
+  {
+    "id": "APLUS-004",
+    "domain": "Security",
+    "station": "Security Station",
+    "problem": "A user reports a suspicious sign-in email.",
+    "visual_clue": "The message asks the user to verify the account through an unfamiliar link.",
+    "learner_action": "Identify phishing signs, advise password reset from a trusted page, and enable MFA.",
+    "success_condition": "Learner lists three phishing indicators without clicking the link."
+  },
+  {
+    "id": "APLUS-005",
+    "domain": "Software Troubleshooting",
+    "station": "OS and VM Station",
+    "problem": "An app crashes after launch.",
+    "visual_clue": "The same error appears each time the app opens.",
+    "learner_action": "Check restart, updates, event logs, reinstall path, and user profile behavior.",
+    "success_condition": "Learner records the symptom, attempted checks, and next escalation step."
+  },
+  {
+    "id": "APLUS-006",
+    "domain": "Operational Procedures",
+    "station": "Troubleshooting Wall",
+    "problem": "A user is upset because a ticket was closed without notes.",
+    "visual_clue": "Ticket status says Done but the resolution field is blank.",
+    "learner_action": "Write clear ticket notes, confirm the user impact, and define next communication.",
+    "success_condition": "Learner writes a complete resolution note in plain language."
+  }
+]
+

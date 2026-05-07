@@ -1,0 +1,10 @@
+module_id,title,file,status,primary_interaction,uses_assets,validation
+APP-008,Start Map,app/index.html,final candidate,Switch sectioning modes choose a route or open a placeholder wiki page,section-map;course-sequence-map;materials/course-sequence;VIS-001;VIS-002,Learner opens a material placeholder or activity from lab station CompTIA or course sequence view
+APP-001,Connector Drag Match,app/index.html,final candidate,Drag cards to match zones,VIS-001;VIS-002;VIS-003;VIS-004,Learner places all four cards correctly
+APP-002,Connector Flash Cards,app/index.html,final candidate,Flip cards and mark known,VIS-001;VIS-002;VIS-003;VIS-004,Learner flips all cards and marks known items
+APP-003,Progress Feedback,app/index.html,final candidate,View match and flash-card progress,VIS-001;VIS-002;VIS-003;VIS-004,Progress updates after learner action
+APP-004,Symptom Match,app/index.html,final candidate,Match symptom clues to safest first checks,SYM-001;SYM-002;SYM-003;SYM-004;SYM-005,Learner places all five symptom clues correctly
+APP-009,Laptop Hardware,app/index.html,final candidate,Use Learn Practice or Quiz mode then hover numbered hotspots and type matching part names,VIS-013;VIS-013A;VIS-013B;VIS-013C;VIS-013D;LAP-001;LAP-002;LAP-003;LAP-004;LAP-005,Learner checks all five numbered laptop answers correctly without covering the diagram
+APP-005,Ticket Board,app/index.html,final candidate,Move tickets through troubleshooting stages,APLUS-001;APLUS-002;APLUS-003;APLUS-004;APLUS-005,Learner moves all five tickets to done
+APP-006,Topology Trace,app/index.html,final candidate,Tap network nodes in sequence,laptop;router;dns;website,Learner traces laptop to router to DNS to website
+APP-007,Evidence Export,app/index.html,final candidate,Refresh copy or download a lab evidence summary,progress totals;learner note;reflection prompt,Learner creates a shareable evidence note after activity work

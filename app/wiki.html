@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A+ Visual Lab Wiki</title>
+  <link rel="stylesheet" href="wiki.css">
+</head>
+<body>
+  <div class="wiki-shell">
+    <header class="wiki-topbar">
+      <div>
+        <p class="eyebrow">A+ Visual Lab</p>
+        <h1>Course Wiki</h1>
+        <p>Read a topic, follow the sequence, then jump into the matching lab.</p>
+      </div>
+      <nav class="wiki-top-actions" aria-label="Wiki actions">
+        <a href="index.html#module=start">Start Map</a>
+        <a href="index.html#module=progress">Progress</a>
+        <a href="../materials/course-sequence/README.md">Markdown Index</a>
+      </nav>
+    </header>
+
+    <main class="wiki-layout">
+      <aside class="wiki-sidebar" aria-label="Course sequence navigation">
+        <div class="wiki-search">
+          <label for="wiki-search-input">Find Topic</label>
+          <input id="wiki-search-input" type="search" placeholder="Search sequence...">
+        </div>
+        <div class="wiki-status-grid" id="wiki-status-grid"></div>
+        <nav class="wiki-sequence-nav" id="wiki-sequence-nav" aria-label="Course topics"></nav>
+      </aside>
+
+      <section class="wiki-reader" aria-live="polite">
+        <div class="reader-toolbar">
+          <div>
+            <p class="eyebrow" id="wiki-topic-meta">Course topic</p>
+            <h2 id="wiki-topic-title">Loading</h2>
+          </div>
+          <a class="practice-link" id="wiki-practice-link" href="index.html#module=start">Open Lab</a>
+        </div>
+        <article class="wiki-article" id="wiki-article"></article>
+      </section>
+
+      <aside class="wiki-rail" aria-label="Topic tools">
+        <section>
+          <h2>Sequence</h2>
+          <div class="sequence-buttons">
+            <a id="wiki-prev-link" href="#">Previous</a>
+            <a id="wiki-next-link" href="#">Next</a>
+          </div>
+        </section>
+
+        <section>
+          <h2>Lab Link</h2>
+          <p id="wiki-lab-note">Open the closest practice module.</p>
+          <a class="rail-practice-link" id="wiki-rail-practice-link" href="index.html#module=start">Open Lab</a>
+        </section>
+
+        <section>
+          <h2>On This Page</h2>
+          <nav id="wiki-page-outline" class="page-outline" aria-label="Page outline"></nav>
+        </section>
+
+        <section>
+          <h2>Lab Shortcuts</h2>
+          <nav class="lab-shortcuts" id="wiki-lab-shortcuts" aria-label="Lab shortcuts"></nav>
+        </section>
+      </aside>
+    </main>
+  </div>
+
+  <script src="wiki-content.js"></script>
+  <script src="wiki.js"></script>
+</body>
+</html>

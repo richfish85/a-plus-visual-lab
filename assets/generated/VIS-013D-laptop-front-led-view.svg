@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 190" role="img" aria-labelledby="title desc">
+  <title id="title">Laptop front LED view</title>
+  <desc id="desc">Blue line art laptop front edge with power, battery, drive activity, and wireless LED indicators.</desc>
+  <defs>
+    <style>
+      .line{fill:none;stroke:#0b63ce;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+      .fine{fill:none;stroke:#0b63ce;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+      .soft{fill:#f8fbff;stroke:#0b63ce;stroke-width:4;stroke-linejoin:round}
+    </style>
+  </defs>
+  <rect x="0" y="0" width="720" height="190" rx="22" fill="white"/>
+  <g transform="translate(76 36)">
+    <path class="soft" d="M32 18h504c18 0 32 14 32 32v38c0 18-14 32-32 32H32c-18 0-32-14-32-32V50c0-18 14-32 32-32Z"/>
+    <path class="line" d="M18 51h532"/>
+    <g transform="translate(124 78)">
+      <circle class="fine" cx="0" cy="0" r="13"/>
+      <path class="fine" d="M0-22v20"/>
+      <rect class="fine" x="86" y="-16" width="22" height="32" rx="4"/>
+      <path class="fine" d="M112-7h6v14h-6"/>
+      <circle class="fine" cx="210" cy="0" r="14"/>
+      <path class="fine" d="M198-12h24M198 12h24"/>
+      <path class="fine" d="M318 10c18-18 18-38 0-56"/>
+      <path class="fine" d="M298 0c8-8 8-18 0-28"/>
+      <circle fill="#0b63ce" cx="280" cy="0" r="5"/>
+    </g>
+  </g>
+</svg>

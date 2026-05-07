@@ -1,0 +1,8 @@
+symptom,likely_area,first_safe_check,visual_clue,do_not_do_first
+No display,Hardware,Check monitor input and cable,Monitor light is orange,Do not replace motherboard first
+No internet,Networking,Check IP gateway and DNS,Wi-Fi says connected,Do not reset every router setting
+Slow startup,Operating Systems,Check startup apps and disk space,Long login delay,Do not reinstall OS first
+Suspicious email,Security,Inspect sender link and urgency,Unknown link asks for sign-in,Do not click the link
+App crash,Software Troubleshooting,Restart and check updates,Same error repeats,Do not delete user data first
+No ticket notes,Operational Procedures,Collect fix and impact,Resolution field is blank,Do not close ticket again
+

@@ -1,0 +1,19 @@
+CompTIA A+ Visual Lab Evidence
+Date: 4 May 2026
+
+Modules:
+- Connector Match: 4/4
+- Flash Cards: 4/4
+- Symptoms: 5/5
+- Topology Trace: 4/4
+- Tickets Done: 5/5
+- Total Progress: 100%
+
+Reflection Prompt:
+Explain one ticket from symptom to done in one sentence.
+
+Learner Note:
+I learned that connected Wi-Fi is only one part of reaching a website.
+
+Next Artifact:
+Topology note and ticket note for APLUS-002.

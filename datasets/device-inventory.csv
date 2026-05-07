@@ -1,0 +1,9 @@
+asset_id,device_type,location,visual_label,practice_use,risk_note
+LAB-PC-01,Desktop,Hardware Bench,Blue desktop,Identify internal parts,Power off before opening case
+LAB-LAP-01,Laptop,Hardware Bench,Silver laptop,Identify ports and mobile hardware,Do not remove battery unless designed for removal
+LAB-RTR-01,Router,Network Table,Yellow router,Trace gateway and DNS path,Use lab network only
+LAB-SW-01,Switch,Network Table,Green switch,Map physical Ethernet paths,Do not connect unknown loops
+LAB-VM-01,Windows VM,OS and VM Station,Purple VM,Practice OS settings and repair,Use snapshots before risky changes
+LAB-VM-02,Linux VM,OS and VM Station,Orange VM,Compare command line and permissions,Use dummy accounts
+LAB-USB-01,USB drive,OS and VM Station,Red USB,Practice boot media concepts,Do not store private data
+

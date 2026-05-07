@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 250" role="img" aria-labelledby="title desc">
+  <title id="title">Laptop external ports view</title>
+  <desc id="desc">Blue line art side views of laptop ports including USB-C, USB-A, HDMI, audio, Ethernet, SD card, and power.</desc>
+  <defs>
+    <style>
+      .line{fill:none;stroke:#0b63ce;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+      .fine{fill:none;stroke:#0b63ce;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+      .soft{fill:#f8fbff;stroke:#0b63ce;stroke-width:4;stroke-linejoin:round}
+      .fill{fill:#e7f0ff;stroke:#0b63ce;stroke-width:2}
+    </style>
+  </defs>
+  <rect x="0" y="0" width="720" height="250" rx="22" fill="white"/>
+  <g transform="translate(34 40)">
+    <path class="line" d="M2 38L292 6c18-2 27 2 29 12"/>
+    <path class="soft" d="M0 66c0-14 10-24 24-23l296 8c8 0 14 7 12 16l-7 27c-3 12-14 21-27 21H30C13 115 0 102 0 85Z"/>
+    <rect class="fine" x="45" y="77" width="23" height="8" rx="4"/>
+    <rect class="fine" x="92" y="75" width="31" height="10" rx="2"/>
+    <path class="fine" d="M150 74h42l8 6-8 8h-42l-8-8Z"/>
+    <circle class="fine" cx="230" cy="80" r="8"/>
+    <rect class="fine" x="262" y="76" width="28" height="8" rx="2"/>
+    <path class="line" d="M44 144h28"/>
+    <rect class="fine" x="36" y="134" width="44" height="20" rx="10"/>
+    <rect class="fine" x="91" y="132" width="44" height="23" rx="3"/>
+    <path class="fine" d="M156 134h50l8 8-8 10h-50l-8-10Z"/>
+    <circle class="fine" cx="239" cy="143" r="13"/>
+    <rect class="fine" x="274" y="136" width="34" height="14" rx="2"/>
+  </g>
+  <g transform="translate(380 40)">
+    <path class="line" d="M28 7l276 32c18 2 26 9 26 20"/>
+    <path class="soft" d="M24 52l296-8c14-1 24 9 24 23v18c0 17-13 30-30 30H46c-13 0-24-9-27-21l-7-27c-2-9 4-16 12-16Z"/>
+    <rect class="fine" x="72" y="73" width="42" height="20" rx="3"/>
+    <path class="fine" d="M80 73v-9h26v9"/>
+    <rect class="fine" x="144" y="75" width="32" height="10" rx="2"/>
+    <rect class="fine" x="203" y="76" width="48" height="8" rx="2"/>
+    <circle class="fine" cx="286" cy="80" r="10"/>
+    <rect class="fine" x="82" y="132" width="48" height="25" rx="4"/>
+    <path class="fine" d="M89 139h34M89 147h34"/>
+    <rect class="fine" x="157" y="135" width="44" height="20" rx="3"/>
+    <rect class="fine" x="228" y="140" width="54" height="8" rx="2"/>
+    <circle class="fine" cx="314" cy="144" r="18"/>
+    <circle fill="#0b63ce" cx="314" cy="144" r="5"/>
+  </g>
+</svg>

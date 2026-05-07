@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" role="img" aria-labelledby="title desc">
+  <title id="title">Laptop internal view</title>
+  <desc id="desc">Blue line art laptop internal view with cooling fan, heat pipe, RAM slots, M.2 SSD, Wi-Fi card, battery, and motherboard traces.</desc>
+  <defs>
+    <style>
+      .line{fill:none;stroke:#0b63ce;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+      .fine{fill:none;stroke:#0b63ce;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+      .soft{fill:#f8fbff;stroke:#0b63ce;stroke-width:4;stroke-linejoin:round}
+      .ghost{fill:#e7f0ff;stroke:#0b63ce;stroke-width:2}
+    </style>
+  </defs>
+  <rect x="0" y="0" width="720" height="360" rx="22" fill="white"/>
+  <rect class="soft" x="64" y="32" width="592" height="286" rx="18"/>
+  <g transform="translate(92 56)">
+    <rect class="fine" x="0" y="0" width="536" height="238" rx="10"/>
+    <circle class="line" cx="94" cy="82" r="48"/>
+    <circle class="fine" cx="94" cy="82" r="25"/>
+    <circle class="line" cx="94" cy="82" r="8"/>
+    <path class="fine" d="M94 34v38M94 92v38M46 82h38M104 82h38"/>
+    <path class="line" d="M150 54h132c35 0 62-16 86-40"/>
+    <path class="fine" d="M153 86h105M153 118h78M258 86h84"/>
+    <rect class="fine" x="292" y="44" width="34" height="126" rx="5"/>
+    <rect class="fine" x="342" y="44" width="34" height="126" rx="5"/>
+    <path class="fine" d="M309 50v114M359 50v114"/>
+    <rect class="ghost" x="168" y="150" width="148" height="28" rx="6"/>
+    <circle fill="#0b63ce" cx="324" cy="164" r="4"/>
+    <rect class="ghost" x="422" y="104" width="54" height="42" rx="6"/>
+    <circle class="fine" cx="448" cy="124" r="8"/>
+    <path class="fine" d="M456 112l36-24M456 136l40 24"/>
+    <rect class="fine" x="58" y="196" width="412" height="34" rx="6"/>
+    <path class="fine" d="M26 26h28M27 144h55M398 26h38M450 54h48M402 186h88M18 206h24"/>
+    <rect class="fine" x="482" y="18" width="26" height="26" rx="3"/>
+    <rect class="fine" x="482" y="64" width="26" height="26" rx="3"/>
+    <rect class="fine" x="18" y="18" width="26" height="26" rx="3"/>
+    <rect class="fine" x="18" y="64" width="26" height="26" rx="3"/>
+  </g>
+</svg>

@@ -1,0 +1,6 @@
+lab_id,lab_title,primary_exam,primary_domain,secondary_domain,portfolio_artifact
+01,Hardware Identification,220-1201,Hardware,Hardware and Network Troubleshooting,Labeled hardware photo or diagram
+02,Build a Basic Network,220-1201,Networking,Hardware and Network Troubleshooting,Network path diagram and ticket note
+03,OS Install and Repair,220-1202,Operating Systems,Software Troubleshooting,Before and after OS settings screenshot
+04,Secure a Workstation,220-1202,Security,Operational Procedures,Annotated phishing sample and response note
+05,Troubleshooting Scenarios,220-1201 and 220-1202,Troubleshooting,Operational Procedures,Completed ticket board photo or screenshot

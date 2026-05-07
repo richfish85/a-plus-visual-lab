@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Connector Matching Cards</title>
+  <style>
+    :root {
+      --ink: #152033;
+      --muted: #5a6576;
+      --line: #c8d4e2;
+      --paper: #ffffff;
+      --network: #0b63ce;
+      --display: #087f5b;
+      --usb: #7048e8;
+      --action: #d9480f;
+      --soft-network: #e7f0ff;
+      --soft-display: #e6f6ef;
+      --soft-usb: #f0ebff;
+      --soft-action: #fff1e8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #eef2f6;
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.35;
+    }
+
+    main {
+      width: min(100%, 980px);
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    .toolbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 16px;
+      padding: 12px 14px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .toolbar h1 {
+      margin: 0;
+      font-size: 20px;
+      letter-spacing: 0;
+    }
+
+    .toolbar p {
+      margin: 3px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .print-button {
+      border: 0;
+      border-radius: 6px;
+      padding: 10px 14px;
+      color: white;
+      background: var(--network);
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .sheet {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 18px;
+    }
+
+    .sheet-title {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: end;
+      margin-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      padding-bottom: 10px;
+    }
+
+    .sheet-title h2 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .sheet-title span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .card {
+      min-height: 268px;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      overflow: hidden;
+      border: 2px dashed var(--line);
+      border-radius: 8px;
+      background: white;
+      break-inside: avoid;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .asset-id {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .tag {
+      border-radius: 999px;
+      padding: 4px 8px;
+      font-size: 11px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .network {
+      color: var(--network);
+      background: var(--soft-network);
+    }
+
+    .display {
+      color: var(--display);
+      background: var(--soft-display);
+    }
+
+    .usb {
+      color: var(--usb);
+      background: var(--soft-usb);
+    }
+
+    .action {
+      color: var(--action);
+      background: var(--soft-action);
+    }
+
+    .image-card img {
+      width: 100%;
+      height: 176px;
+      object-fit: contain;
+      display: block;
+      padding: 10px;
+      background: #fbfdff;
+    }
+
+    .card-body {
+      display: grid;
+      place-items: center;
+      min-height: 150px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .card-title {
+      margin: 0;
+      font-size: 26px;
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .card-prompt {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      align-items: center;
+      padding: 10px 12px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .station-card .card-body {
+      min-height: 183px;
+    }
+
+    .station-card.network-border {
+      border-color: var(--network);
+    }
+
+    .station-card.display-border {
+      border-color: var(--display);
+    }
+
+    .station-card.usb-border {
+      border-color: var(--usb);
+    }
+
+    .micro-steps {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--ink);
+      font-size: 15px;
+      text-align: left;
+    }
+
+    .micro-steps li {
+      margin: 6px 0;
+    }
+
+    .cut-note {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    @page {
+      size: Letter;
+      margin: 0.35in;
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      main {
+        width: 100%;
+        padding: 0;
+      }
+
+      .toolbar {
+        display: none;
+      }
+
+      .sheet {
+        border: 0;
+        border-radius: 0;
+        padding: 0;
+        margin: 0;
+        page-break-after: always;
+      }
+
+      .sheet:last-child {
+        page-break-after: auto;
+      }
+
+      .card {
+        min-height: 252px;
+      }
+
+      .image-card img {
+        height: 160px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="toolbar" aria-label="Card deck controls">
+      <div>
+        <h1>Connector Matching Cards</h1>
+        <p>Print, cut, match, and move cards to the correct station.</p>
+      </div>
+      <button class="print-button" type="button" onclick="window.print()">Print cards</button>
+    </section>
+
+    <section class="sheet" aria-labelledby="image-cards-title">
+      <div class="sheet-title">
+        <h2 id="image-cards-title">Image Cards</h2>
+        <span>Cut apart</span>
+      </div>
+
+      <div class="card-grid">
+        <article class="card image-card">
+          <div class="card-header">
+            <span class="asset-id">VIS-001</span>
+            <span class="tag network">Network</span>
+          </div>
+          <img src="../assets/generated/VIS-001-rj45-ethernet-cable-photo-reference.png" alt="RJ45 Ethernet cable connector with visible clip and gold contacts">
+          <div class="card-footer">
+            <span>RJ45 cable</span>
+            <span>Match to port</span>
+          </div>
+        </article>
+
+        <article class="card image-card">
+          <div class="card-header">
+            <span class="asset-id">VIS-002</span>
+            <span class="tag network">Network</span>
+          </div>
+          <img src="../assets/generated/VIS-002-ethernet-port-photo-reference.png" alt="Ethernet port on a generic computer with contact pins visible">
+          <div class="card-footer">
+            <span>Ethernet port</span>
+            <span>Match to cable</span>
+          </div>
+        </article>
+
+        <article class="card image-card">
+          <div class="card-header">
+            <span class="asset-id">VIS-003</span>
+            <span class="tag display">Display</span>
+          </div>
+          <img src="../assets/generated/VIS-003-hdmi-cable-port-photo-reference.png" alt="HDMI cable connector next to a matching HDMI port">
+          <div class="card-footer">
+            <span>HDMI</span>
+            <span>Display path</span>
+          </div>
+        </article>
+
+        <article class="card image-card">
+          <div class="card-header">
+            <span class="asset-id">VIS-004</span>
+            <span class="tag usb">USB</span>
+          </div>
+          <img src="../assets/generated/VIS-004-usb-a-usb-c-blue-lineart.png" alt="Blue lineart comparison of USB-A and USB-C connector shapes">
+          <div class="card-footer">
+            <span>USB-A / USB-C</span>
+            <span>Sort shapes</span>
+          </div>
+        </article>
+      </div>
+      <p class="cut-note">Cut on dashed borders. Keep image cards in one pile and match cards in another pile.</p>
+    </section>
+
+    <section class="sheet" aria-labelledby="match-cards-title">
+      <div class="sheet-title">
+        <h2 id="match-cards-title">Match Cards</h2>
+        <span>Pair with images</span>
+      </div>
+
+      <div class="card-grid">
+        <article class="card station-card network-border">
+          <div class="card-header">
+            <span class="asset-id">MATCH-001</span>
+            <span class="tag network">Network</span>
+          </div>
+          <div class="card-body">
+            <div>
+              <h3 class="card-title">Cable to Port</h3>
+              <p class="card-prompt">RJ45 cable connects to Ethernet port.</p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span>Pair VIS-001 + VIS-002</span>
+            <span>Lab 02</span>
+          </div>
+        </article>
+
+        <article class="card station-card display-border">
+          <div class="card-header">
+            <span class="asset-id">MATCH-002</span>
+            <span class="tag display">Display</span>
+          </div>
+          <div class="card-body">
+            <div>
+              <h3 class="card-title">Display Path</h3>
+              <p class="card-prompt">HDMI carries video and audio to a display.</p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span>Use VIS-003</span>
+            <span>Lab 01</span>
+          </div>
+        </article>
+
+        <article class="card station-card usb-border">
+          <div class="card-header">
+            <span class="asset-id">MATCH-003</span>
+            <span class="tag usb">USB</span>
+          </div>
+          <div class="card-body">
+            <div>
+              <h3 class="card-title">Shape Sort</h3>
+              <p class="card-prompt">USB-A is rectangular. USB-C is rounded and reversible.</p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span>Use VIS-004</span>
+            <span>Lab 01</span>
+          </div>
+        </article>
+
+        <article class="card station-card">
+          <div class="card-header">
+            <span class="asset-id">ACTION-001</span>
+            <span class="tag action">Do</span>
+          </div>
+          <div class="card-body">
+            <ol class="micro-steps">
+              <li>Pick one image card.</li>
+              <li>Find its match card.</li>
+              <li>Move both to a station.</li>
+              <li>Say the match out loud.</li>
+            </ol>
+          </div>
+          <div class="card-footer">
+            <span>One match at a time</span>
+            <span>Stop at done</span>
+          </div>
+        </article>
+      </div>
+      <p class="cut-note">Optional: leave this second page uncut and use it as the answer board.</p>
+    </section>
+  </main>
+</body>
+</html>
+

@@ -1,0 +1,12 @@
+port_or_protocol,common_number,visual_card_color,plain_meaning,practice_prompt
+HTTP,80,Blue,Unencrypted web traffic,Match browser request to web server card
+HTTPS,443,Blue,Encrypted web traffic,Explain why HTTPS is preferred
+DNS,53,Yellow,Name lookup,Trace example.com to an IP address
+DHCP,67/68,Yellow,Automatic IP settings,Show how a device receives an address
+RDP,3389,Purple,Remote Windows desktop,Discuss why remote access needs protection
+SSH,22,Purple,Secure remote shell,Compare SSH to RDP at a high level
+SMTP,25,Green,Sending email,Place it in an email flow diagram
+IMAP,143,Green,Reading email from server,Compare to POP3
+POP3,110,Green,Downloading email,Compare to IMAP
+SMB,445,Red,Windows file sharing,Explain why exposed file sharing is risky
+

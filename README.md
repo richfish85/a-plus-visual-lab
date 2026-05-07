@@ -66,6 +66,11 @@ a-plus-visual-lab/
   portfolio-capture.md
   project-mvps.md
   visual-assets.md
+  app/
+    index.html
+    styles.css
+    app.js
+    README.md
   assets/
     generated/
     sourced/
@@ -78,16 +83,19 @@ a-plus-visual-lab/
     session-start.md
     visual-accommodation.md
   datasets/
+    section-map.csv
     device-inventory.csv
     objective-map.csv
     port-matching.csv
     symptom-map.csv
     tickets.json
     card-deck-manifest.csv
+    app-module-manifest.csv
     visual-asset-manifest.csv
   diagrams/
     a-plus-study-map.md
     lab-topology.md
+    section-mode-map.md
     troubleshooting-flow.md
   labs/
     01-hardware-identification.md
@@ -95,6 +103,8 @@ a-plus-visual-lab/
     03-os-install-and-repair.md
     04-secure-a-workstation.md
     05-troubleshooting-scenarios.md
+  portfolio-evidence/
+    sample-networking-ticket/
 ```
 
 Recommended equipment:

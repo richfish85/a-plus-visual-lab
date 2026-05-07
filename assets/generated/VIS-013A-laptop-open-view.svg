@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440" role="img" aria-labelledby="title desc">
+  <title id="title">Open laptop view</title>
+  <desc id="desc">Blue line art view of an open laptop with display panel, keyboard, touchpad, hinges, webcam, and speakers.</desc>
+  <defs>
+    <style>
+      .line{fill:none;stroke:#0b63ce;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+      .fine{fill:none;stroke:#0b63ce;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+      .soft{fill:#f8fbff;stroke:#0b63ce;stroke-width:4;stroke-linejoin:round}
+      .ghost{fill:#e7f0ff;stroke:#0b63ce;stroke-width:2}
+    </style>
+  </defs>
+  <rect x="0" y="0" width="720" height="440" rx="24" fill="white"/>
+  <g transform="translate(126 30)">
+    <rect class="soft" x="58" y="0" width="352" height="202" rx="16"/>
+    <rect class="fine" x="82" y="28" width="304" height="142" rx="6"/>
+    <circle class="fine" cx="234" cy="15" r="5"/>
+    <circle fill="#0b63ce" cx="220" cy="15" r="2"/>
+    <circle fill="#0b63ce" cx="248" cy="15" r="2"/>
+    <path class="line" d="M64 198c-18 12-28 24-32 42l-30 118c-4 18 10 35 30 35h404c20 0 34-17 30-35l-30-118c-4-18-14-30-32-42"/>
+    <rect class="ghost" x="74" y="204" width="40" height="14" rx="3"/>
+    <rect class="ghost" x="354" y="204" width="40" height="14" rx="3"/>
+    <g transform="translate(82 242)">
+      <rect class="fine" x="0" y="0" width="24" height="9" rx="3"/>
+      <rect class="fine" x="32" y="0" width="24" height="9" rx="3"/>
+      <rect class="fine" x="64" y="0" width="24" height="9" rx="3"/>
+      <rect class="fine" x="96" y="0" width="24" height="9" rx="3"/>
+      <rect class="fine" x="128" y="0" width="24" height="9" rx="3"/>
+      <rect class="fine" x="160" y="0" width="24" height="9" rx="3"/>
+      <rect class="fine" x="192" y="0" width="24" height="9" rx="3"/>
+      <rect class="fine" x="224" y="0" width="24" height="9" rx="3"/>
+      <rect class="fine" x="256" y="0" width="24" height="9" rx="3"/>
+      <rect class="fine" x="288" y="0" width="24" height="9" rx="3"/>
+      <rect class="fine" x="8" y="18" width="24" height="9" rx="3"/>
+      <rect class="fine" x="40" y="18" width="24" height="9" rx="3"/>
+      <rect class="fine" x="72" y="18" width="24" height="9" rx="3"/>
+      <rect class="fine" x="104" y="18" width="24" height="9" rx="3"/>
+      <rect class="fine" x="136" y="18" width="24" height="9" rx="3"/>
+      <rect class="fine" x="168" y="18" width="24" height="9" rx="3"/>
+      <rect class="fine" x="200" y="18" width="24" height="9" rx="3"/>
+      <rect class="fine" x="232" y="18" width="24" height="9" rx="3"/>
+      <rect class="fine" x="264" y="18" width="24" height="9" rx="3"/>
+      <rect class="fine" x="296" y="18" width="24" height="9" rx="3"/>
+      <rect class="fine" x="0" y="36" width="24" height="9" rx="3"/>
+      <rect class="fine" x="32" y="36" width="24" height="9" rx="3"/>
+      <rect class="fine" x="64" y="36" width="24" height="9" rx="3"/>
+      <rect class="fine" x="96" y="36" width="24" height="9" rx="3"/>
+      <rect class="fine" x="128" y="36" width="24" height="9" rx="3"/>
+      <rect class="fine" x="160" y="36" width="24" height="9" rx="3"/>
+      <rect class="fine" x="192" y="36" width="24" height="9" rx="3"/>
+      <rect class="fine" x="224" y="36" width="24" height="9" rx="3"/>
+      <rect class="fine" x="256" y="36" width="24" height="9" rx="3"/>
+      <rect class="fine" x="288" y="36" width="24" height="9" rx="3"/>
+      <rect class="fine" x="52" y="55" width="210" height="12" rx="4"/>
+    </g>
+    <rect class="fine" x="180" y="315" width="108" height="44" rx="8"/>
+    <path class="fine" d="M72 232l-18 114M396 232l18 114"/>
+    <circle fill="#0b63ce" cx="52" cy="240" r="5"/>
+    <circle fill="#0b63ce" cx="416" cy="240" r="5"/>
+  </g>
+</svg>

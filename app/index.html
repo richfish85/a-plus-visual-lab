@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A+ Visual Lab App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <h1>A+ Visual Lab</h1>
+        <p>Choose, match, document.</p>
+      </div>
+      <nav class="module-tabs" aria-label="Modules">
+        <button class="tab-button active" type="button" data-module="start">Start Map</button>
+        <a class="tab-button" href="wiki.html">Wiki</a>
+        <button class="tab-button" type="button" data-module="drag">Drag Match</button>
+        <button class="tab-button" type="button" data-module="flash">Flash Cards</button>
+        <button class="tab-button" type="button" data-module="symptoms">Symptoms</button>
+        <button class="tab-button" type="button" data-module="laptop">Laptop</button>
+        <button class="tab-button" type="button" data-module="topology">Topology</button>
+        <button class="tab-button" type="button" data-module="tickets">Tickets</button>
+        <button class="tab-button" type="button" data-module="progress">Progress</button>
+        <button class="tab-button" type="button" data-module="evidence">Evidence</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="module active" id="module-start" aria-labelledby="start-title">
+        <div class="module-heading">
+          <div>
+            <h2 id="start-title">Choose Your Route</h2>
+            <p>Pick the map that makes sense today. Each card shows the same A+ content three ways.</p>
+          </div>
+          <div class="score-card">
+            <span id="route-count">6</span>
+            <small>route cards</small>
+          </div>
+        </div>
+
+        <div class="map-hero" aria-label="Section map modes">
+          <div class="map-mode-bar" id="map-mode-bar">
+            <button class="map-mode-button active" type="button" data-map-mode="lab">Lab Stations</button>
+            <button class="map-mode-button" type="button" data-map-mode="comptia">CompTIA Domains</button>
+            <button class="map-mode-button" type="button" data-map-mode="course">Course Sequence</button>
+          </div>
+          <div class="map-summary-grid" aria-label="Map summary">
+            <article>
+              <span>6</span>
+              <p>lab routes</p>
+            </article>
+            <article>
+              <span>5</span>
+              <p>Core 1 domains</p>
+            </article>
+            <article>
+              <span>27</span>
+              <p>course topics</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="map-workspace" id="map-workspace">
+          <div class="map-grid" id="map-grid" aria-live="polite"></div>
+          <aside class="course-sequence-panel" id="course-sequence-panel" aria-labelledby="course-panel-title"></aside>
+        </div>
+
+        <div class="feedback-row">
+          <p id="map-feedback" class="feedback">Choose a route card or switch map modes.</p>
+          <button class="secondary-button" type="button" data-route-module="progress">View Progress</button>
+        </div>
+      </section>
+
+      <section class="module" id="module-drag" aria-labelledby="drag-title">
+        <div class="module-heading">
+          <div>
+            <h2 id="drag-title">Connector Drag Match</h2>
+            <p>Move each visual into the best match zone. Click a card, then click a zone if dragging is awkward.</p>
+          </div>
+          <div class="score-card" aria-live="polite">
+            <span id="match-score">0</span>
+            <small>of 4 placed</small>
+          </div>
+        </div>
+
+        <div class="course-focus-panel" id="drag-focus-panel" hidden></div>
+
+        <div class="activity-layout">
+          <section class="card-pool" aria-label="Connector cards">
+            <h3>Visual Cards</h3>
+            <div class="draggable-grid" id="draggable-grid"></div>
+          </section>
+
+          <section class="drop-panel" aria-label="Match zones">
+            <h3>Match Zones</h3>
+            <div class="drop-grid" id="drop-grid"></div>
+          </section>
+        </div>
+
+        <div class="feedback-row">
+          <p id="match-feedback" class="feedback">Pick one card to begin.</p>
+          <button class="secondary-button" type="button" id="reset-match">Reset Match</button>
+        </div>
+      </section>
+
+      <section class="module" id="module-flash" aria-labelledby="flash-title">
+        <div class="module-heading">
+          <div>
+            <h2 id="flash-title">Flash Cards</h2>
+            <p>Look first, guess the purpose, then flip.</p>
+          </div>
+          <div class="score-card">
+            <span id="flash-position">1</span>
+            <small>of 4</small>
+          </div>
+        </div>
+
+        <div class="course-focus-panel" id="flash-focus-panel" hidden></div>
+
+        <div class="flash-wrap">
+          <article class="flash-card" id="flash-card" tabindex="0" role="button" aria-label="Flip flash card">
+            <div class="flash-face flash-front">
+              <span class="asset-pill" id="flash-id">VIS-001</span>
+              <img id="flash-image" src="" alt="">
+              <h3 id="flash-title-text">RJ45 Ethernet Cable</h3>
+              <p>What does this connect to?</p>
+            </div>
+            <div class="flash-face flash-back">
+              <span class="asset-pill" id="flash-back-id">VIS-001</span>
+              <h3 id="flash-answer">Ethernet port</h3>
+              <p id="flash-note">Used for wired network connections.</p>
+            </div>
+          </article>
+
+          <div class="flash-controls">
+            <button class="secondary-button" type="button" id="prev-card">Previous</button>
+            <button class="primary-button" type="button" id="flip-card">Flip</button>
+            <button class="secondary-button" type="button" id="known-card">Mark Known</button>
+            <button class="secondary-button" type="button" id="next-card">Next</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="module" id="module-symptoms" aria-labelledby="symptoms-title">
+        <div class="module-heading">
+          <div>
+            <h2 id="symptoms-title">Symptom Match</h2>
+            <p>Match each clue to the safest first check. Tap a clue, then tap a check zone.</p>
+          </div>
+          <div class="score-card" aria-live="polite">
+            <span id="symptom-score">0</span>
+            <small>of 5 placed</small>
+          </div>
+        </div>
+
+        <div class="course-focus-panel" id="symptoms-focus-panel" hidden></div>
+
+        <div class="activity-layout symptom-layout">
+          <section class="card-pool" aria-label="Symptom cards">
+            <h3>Visual Clues</h3>
+            <div class="symptom-grid" id="symptom-grid"></div>
+          </section>
+
+          <section class="drop-panel" aria-label="First check zones">
+            <h3>First Checks</h3>
+            <div class="check-grid" id="check-grid"></div>
+          </section>
+        </div>
+
+        <div class="feedback-row">
+          <p id="symptom-feedback" class="feedback">Pick one clue to begin.</p>
+          <button class="secondary-button" type="button" id="reset-symptoms">Reset Symptoms</button>
+        </div>
+      </section>
+
+      <section class="module" id="module-laptop" aria-labelledby="laptop-title">
+        <div class="module-heading">
+          <div>
+            <h2 id="laptop-title">Laptop Hardware</h2>
+            <p>Study numbered hotspots, then type the matching part names.</p>
+          </div>
+          <div class="score-card" aria-live="polite">
+            <span id="laptop-score">0</span>
+            <small>of 5 correct</small>
+          </div>
+        </div>
+
+        <div class="course-focus-panel" id="laptop-focus-panel" hidden></div>
+
+        <div class="laptop-layout">
+          <section class="laptop-map-panel" aria-label="Laptop visual map">
+            <div class="laptop-panel-head">
+              <div>
+                <h3>Laptop Hardware Map</h3>
+                <p>Diagram first. No labels over the parts.</p>
+              </div>
+              <div class="laptop-mode-bar" id="laptop-mode-bar" aria-label="Laptop activity mode">
+                <button class="mode-button" type="button" data-laptop-mode="learn">Learn</button>
+                <button class="mode-button" type="button" data-laptop-mode="practice">Practice</button>
+                <button class="mode-button" type="button" data-laptop-mode="quiz">Quiz</button>
+              </div>
+            </div>
+              <div class="laptop-zone-grid" id="laptop-zone-grid" aria-label="Interactive laptop hardware map"></div>
+          </section>
+
+          <aside class="laptop-side-panel" aria-label="Laptop activity controls">
+            <section class="card-pool laptop-token-panel" aria-label="Laptop numbered answer panel">
+              <div class="laptop-panel-head compact">
+                <div>
+                  <h3>Answer Panel</h3>
+                  <p>Learn, practice, then quiz.</p>
+                </div>
+              </div>
+              <div class="laptop-part-grid" id="laptop-part-grid"></div>
+            </section>
+
+            <section class="laptop-detail-panel" id="laptop-detail-panel" aria-live="polite"></section>
+              <section class="laptop-match-list" id="laptop-match-list" aria-label="Laptop answer progress"></section>
+          </aside>
+        </div>
+
+        <div class="feedback-row">
+          <p id="laptop-feedback" class="feedback">Hover a number to learn, or type answers in Practice.</p>
+          <div class="feedback-actions">
+            <button class="secondary-button" type="button" id="hint-laptop">Hint</button>
+            <button class="secondary-button" type="button" id="check-laptop">Check</button>
+            <button class="secondary-button" type="button" id="reset-laptop">Reset Laptop</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="module" id="module-tickets" aria-labelledby="tickets-title">
+        <div class="module-heading">
+          <div>
+            <h2 id="tickets-title">Ticket Board</h2>
+            <p>Move one ticket at a time: diagnose, fix, document, done.</p>
+          </div>
+          <div class="score-card" aria-live="polite">
+            <span id="ticket-score">0</span>
+            <small>of 5 done</small>
+          </div>
+        </div>
+
+        <div class="course-focus-panel" id="tickets-focus-panel" hidden></div>
+
+        <div class="ticket-board" id="ticket-board" aria-label="Troubleshooting ticket board"></div>
+
+        <div class="feedback-row">
+          <p id="ticket-feedback" class="feedback">Pick a ticket, then move it to the next stage.</p>
+          <button class="secondary-button" type="button" id="reset-tickets">Reset Tickets</button>
+        </div>
+      </section>
+
+      <section class="module" id="module-topology" aria-labelledby="topology-title">
+        <div class="module-heading">
+          <div>
+            <h2 id="topology-title">Topology Trace</h2>
+            <p>Tap the path in order: laptop, router, DNS, website.</p>
+          </div>
+          <div class="score-card" aria-live="polite">
+            <span id="topology-score">0</span>
+            <small>of 4 traced</small>
+          </div>
+        </div>
+
+        <div class="course-focus-panel" id="topology-focus-panel" hidden></div>
+
+        <div class="topology-wrap">
+          <section class="topology-map" id="topology-map" aria-label="Network topology nodes"></section>
+          <section class="path-panel" aria-label="Expected trace path">
+            <h3>Trace Path</h3>
+            <div class="path-strip" id="path-strip"></div>
+          </section>
+        </div>
+
+        <div class="feedback-row">
+          <p id="topology-feedback" class="feedback">Start with the laptop.</p>
+          <button class="secondary-button" type="button" id="reset-topology">Reset Topology</button>
+        </div>
+      </section>
+
+      <section class="module" id="module-progress" aria-labelledby="progress-title">
+        <div class="module-heading">
+          <div>
+            <h2 id="progress-title">Progress</h2>
+            <p>Small wins are visible here.</p>
+          </div>
+          <button class="secondary-button" type="button" id="reset-all">Reset All</button>
+        </div>
+
+        <div class="progress-grid">
+          <article class="progress-tile">
+            <span id="progress-matches">0/4</span>
+            <p>Drag matches complete</p>
+          </article>
+          <article class="progress-tile">
+            <span id="progress-known">0/4</span>
+            <p>Flash cards known</p>
+          </article>
+          <article class="progress-tile">
+            <span id="progress-symptoms">0/5</span>
+            <p>Symptom matches complete</p>
+          </article>
+          <article class="progress-tile">
+            <span id="progress-laptop">0/5</span>
+            <p>Laptop answers correct</p>
+          </article>
+          <article class="progress-tile">
+            <span id="progress-topology">0/4</span>
+            <p>Topology trace complete</p>
+          </article>
+          <article class="progress-tile">
+            <span id="progress-tickets">0/5</span>
+            <p>Tickets moved to done</p>
+          </article>
+          <article class="progress-tile">
+            <span id="progress-total">0%</span>
+            <p>Total module progress</p>
+          </article>
+        </div>
+
+        <div class="reflection-box">
+          <h3>One-sentence check</h3>
+          <p id="reflection-prompt">Complete one match or mark one card known to unlock a prompt.</p>
+        </div>
+      </section>
+
+      <section class="module" id="module-evidence" aria-labelledby="evidence-title">
+        <div class="module-heading">
+          <div>
+            <h2 id="evidence-title">Evidence Export</h2>
+            <p>Turn today&apos;s app work into a short lab note.</p>
+          </div>
+          <button class="secondary-button" type="button" id="refresh-evidence">Refresh Summary</button>
+        </div>
+
+        <div class="evidence-layout">
+          <section class="evidence-panel" aria-labelledby="learner-note-title">
+            <h3 id="learner-note-title">Learner Note</h3>
+            <label class="field-label" for="learner-note">One sentence reflection</label>
+            <textarea
+              id="learner-note"
+              rows="6"
+              placeholder="Example: I traced laptop, router, DNS, website, then documented the result."
+            ></textarea>
+          </section>
+
+          <section class="evidence-panel" aria-labelledby="evidence-summary-title">
+            <h3 id="evidence-summary-title">Evidence Summary</h3>
+            <textarea id="evidence-summary" rows="14" readonly></textarea>
+            <div class="evidence-actions">
+              <button class="secondary-button" type="button" id="copy-evidence">Copy Summary</button>
+              <button class="primary-button" type="button" id="download-evidence">Download Summary</button>
+            </div>
+            <p id="evidence-feedback" class="feedback" aria-live="polite">Refresh after finishing a module.</p>
+          </section>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
