@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HW-014 No Display | Field Reference</title>
+  <link rel="stylesheet" href="technician.css">
+</head>
+<body class="field-body">
+  <div class="field-frame">
+    <header class="field-header">
+      <span class="module-id">HW-014</span>
+      <h1>No Display</h1>
+      <span class="crumb">Hardware / Video output / Desktop PC + external monitor / Rev 1.0</span>
+    </header>
+
+    <aside class="field-spine">
+      <nav class="field-legend" aria-label="Module structure">
+        <span class="spine-caption">Every module answers</span>
+        <a href="#what" data-k="what"><span>1</span><strong>What happened?</strong></a>
+        <a href="#why" data-k="why"><span>2</span><strong>Why did it happen?</strong></a>
+        <a href="#diag" data-k="diag"><span>3</span><strong>How do I diagnose it?</strong></a>
+        <a href="#fix" data-k="fix"><span>4</span><strong>How do I fix it safely?</strong></a>
+        <a href="#doc" data-k="doc"><span>5</span><strong>How do I document it?</strong></a>
+      </nav>
+
+      <nav class="field-tree" aria-label="Hardware modules">
+        <span class="spine-caption">Hardware modules</span>
+        <span class="tree-group">Power and boot</span>
+        <a href="#"><span>HW-011</span> PC fully dead</a>
+        <a href="#"><span>HW-012</span> Powers on, shuts off</a>
+        <a href="#"><span>HW-013</span> Restarts on its own</a>
+        <span class="tree-group">Video output</span>
+        <a href="technician-display.html" class="active" aria-current="page"><span>HW-014</span> No display</a>
+        <a href="#"><span>HW-015</span> Laptop screen blank</a>
+        <a href="#"><span>HW-016</span> Flicker or artifacts</a>
+        <a href="#"><span>HW-017</span> Second monitor not found</a>
+        <span class="tree-group">Peripherals</span>
+        <a href="#"><span>HW-021</span> Keyboard/mouse dead</a>
+        <a href="#"><span>HW-022</span> USB device not detected</a>
+        <p><b>Use:</b> pick the cause tab that matches the evidence. Diagnose and Fix change together.</p>
+      </nav>
+
+      <a class="field-back" href="technician-index.html">Back to runbook</a>
+    </aside>
+
+    <section class="field-zone field-what" id="what" aria-label="What happened">
+      <span class="field-label">1 / What happened</span>
+      <div class="what-row">
+        <p class="symptom">The desktop has power, but the monitor shows no image.</p>
+        <dl>
+          <dt>Symptoms</dt><dd>Fans spin / power light on / screen blank</dd>
+          <dt>Applies to</dt><dd>Desktop PC with separate monitor</dd>
+          <dt>First rule</dt><dd>Check monitor, input, and cables before opening the PC</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section class="field-zone field-why" id="why" aria-label="Why did it happen">
+      <span class="field-label">2 / Why it happens</span>
+      <p>Most cases are monitor power, wrong input, loose cable, or a hardware fault. Start outside the case.</p>
+      <div class="cause-tabs" role="tablist" aria-label="Possible causes">
+        <button class="cause-tab" type="button" role="tab" id="tab-power" aria-selected="true" data-cause="power">Monitor power <span>common</span></button>
+        <button class="cause-tab" type="button" role="tab" id="tab-signal" aria-selected="false" data-cause="signal">Cable or signal <span>common</span></button>
+        <button class="cause-tab" type="button" role="tab" id="tab-hardware" aria-selected="false" data-cause="hardware">Hardware fault <span>escalate</span></button>
+      </div>
+    </section>
+
+    <div class="field-work">
+      <section class="field-zone field-diag" id="diag" aria-label="How do I diagnose it">
+        <div class="cause-panel" data-cause-panel="power">
+          <span class="field-label">3 / Diagnose</span>
+          <h2>Is the monitor getting power?</h2>
+          <ol class="field-tests">
+            <li><b>Check monitor power light.</b><span><em>On:</em> move to signal checks. <em>Off:</em> keep checking power.</span></li>
+            <li><b>Press monitor power once.</b><span>Do not hold buttons or change menu settings yet.</span></li>
+            <li><b>Follow the power cable.</b><span>Check the monitor end, wall socket, and power board.</span></li>
+            <li><b>Test the wall socket.</b><span>Use a known-working low-risk device such as a phone charger.</span></li>
+          </ol>
+        </div>
+        <div class="cause-panel" data-cause-panel="signal" hidden>
+          <span class="field-label">3 / Diagnose</span>
+          <h2>Is the signal reaching the monitor?</h2>
+          <ol class="field-tests">
+            <li><b>Check monitor input.</b><span>Match the selected input to the cable: HDMI, DisplayPort, or VGA.</span></li>
+            <li><b>Reseat both video cable ends.</b><span>Check the monitor end and desktop end.</span></li>
+            <li><b>Check the correct PC port.</b><span>If the PC has a graphics card, use the graphics card port, not the motherboard port.</span></li>
+            <li><b>Swap to a known-good cable.</b><span>If the new cable works, label or remove the failed cable.</span></li>
+          </ol>
+        </div>
+        <div class="cause-panel" data-cause-panel="hardware" hidden>
+          <span class="field-label">3 / Diagnose</span>
+          <h2>Is the monitor or PC hardware at fault?</h2>
+          <ol class="field-tests">
+            <li><b>Test the monitor on a known-good device.</b><span>If it stays blank, the monitor is likely faulty.</span></li>
+            <li><b>Listen for POST beeps.</b><span>Record beep or LED patterns exactly.</span></li>
+            <li><b>Try another video output if allowed.</b><span>If one port works and another does not, record exactly which port failed.</span></li>
+            <li><b>Stop before risky internal work.</b><span>Escalate if not trained or not authorised.</span></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="field-zone field-fix" id="fix" aria-label="How do I fix it safely">
+        <div class="cause-panel" data-fix-panel="power">
+          <span class="field-label">4 / Fix safely</span>
+          <h2>Restore monitor power</h2>
+          <div class="field-warning">Do not open a monitor or power board. Replace, do not repair.</div>
+          <ol class="field-steps">
+            <li>Reseat the power cable at the monitor and wall.</li>
+            <li>Bypass the power board if safe and allowed.</li>
+            <li>Move to a working wall socket if the socket is dead.</li>
+            <li>Swap the monitor if it has no power on a known-good socket.</li>
+            <li><b>Verify:</b> image stays visible for one minute.</li>
+          </ol>
+        </div>
+        <div class="cause-panel" data-fix-panel="signal" hidden>
+          <span class="field-label">4 / Fix safely</span>
+          <h2>Restore video signal</h2>
+          <div class="field-warning">Power the PC down before moving stubborn video cables.</div>
+          <ol class="field-steps">
+            <li>Select the input that matches the connected cable.</li>
+            <li>Reseat the video cable at both ends.</li>
+            <li>Move the cable to the graphics card port if the PC has one.</li>
+            <li>Replace the cable if a known-good cable fixes the display.</li>
+            <li><b>Verify:</b> image survives one restart.</li>
+          </ol>
+        </div>
+        <div class="cause-panel" data-fix-panel="hardware" hidden>
+          <span class="field-label">4 / Fix safely</span>
+          <h2>Escalate or reseat hardware</h2>
+          <div class="field-warning">Unplug power and use ESD care before touching internal parts.</div>
+          <ol class="field-steps">
+            <li>Power off and unplug the PC.</li>
+            <li>Reseat graphics card only if trained and allowed.</li>
+            <li>Reconnect graphics card power cables if present.</li>
+            <li>Tag and swap a failed monitor.</li>
+            <li><b>Escalate:</b> POST codes, RAM, board, or PSU faults.</li>
+          </ol>
+        </div>
+      </section>
+    </div>
+
+    <section class="field-zone field-doc" id="doc" aria-label="How do I document it">
+      <div>
+        <span class="field-label">5 / Document it</span>
+        <p>Use short ticket notes. State symptom, checks, action, result, and what was not changed.</p>
+      </div>
+      <pre id="ticketText">User reported desktop has power but monitor shows no image.
+Confirmed desktop power light and fans active.
+Checked monitor power and selected input.
+Checked video cable at monitor and desktop.
+Reseated HDMI cable.
+Display returned after input was changed to HDMI 1.
+No internal hardware changes made.</pre>
+      <button class="copy-ticket" type="button">Copy note</button>
+    </section>
+  </div>
+
+  <script>
+    const tabs = document.querySelectorAll(".cause-tab");
+    const panels = document.querySelectorAll("[data-cause-panel], [data-fix-panel]");
+    const ticket = document.querySelector("#ticketText");
+    const notes = {
+      power: `User reported desktop has power but monitor shows no image.
+Confirmed desktop power light and fans active.
+Monitor power light was off.
+Checked monitor power cable and wall socket.
+Reseated monitor power cable.
+Display returned after monitor power was restored.
+No internal hardware changes made.`,
+      signal: `User reported desktop has power but monitor shows no image.
+Confirmed desktop power light and fans active.
+Checked monitor input and video cable.
+Video cable was loose / wrong input was selected.
+Reseated cable and set correct input.
+Display returned and survived restart.
+No internal hardware changes made.`,
+      hardware: `User reported desktop has power but monitor shows no image.
+External power, input, and cable checks completed.
+Known-good cable did not resolve issue.
+POST or hardware fault suspected.
+No internal parts changed by technician.
+Escalated for hardware inspection.`
+    };
+
+    function selectCause(cause) {
+      tabs.forEach((tab) => tab.setAttribute("aria-selected", String(tab.dataset.cause === cause)));
+      panels.forEach((panel) => {
+        const key = panel.dataset.causePanel || panel.dataset.fixPanel;
+        panel.hidden = key !== cause;
+      });
+      ticket.textContent = notes[cause];
+    }
+
+    tabs.forEach((tab) => tab.addEventListener("click", () => selectCause(tab.dataset.cause)));
+    selectCause("power");
+    document.querySelector(".copy-ticket").addEventListener("click", async (event) => {
+      await navigator.clipboard?.writeText(ticket.textContent);
+      event.currentTarget.textContent = "Copied";
+      setTimeout(() => { event.currentTarget.textContent = "Copy note"; }, 1200);
+    });
+  </script>
+</body>
+</html>

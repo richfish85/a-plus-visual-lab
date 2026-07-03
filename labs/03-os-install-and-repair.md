@@ -25,6 +25,10 @@ If a Windows VM is slow and low on disk space, the learner can check startup app
 
 Use ticket `APLUS-003`.
 
+Simplified pilot version:
+
+- [APLUS-003: Windows VM slow, low disk space](../pilot-modules/aplus-003-windows-vm-slow-low-disk.md)
+
 Steps:
 
 1. Start the VM.

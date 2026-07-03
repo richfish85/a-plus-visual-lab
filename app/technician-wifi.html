@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NET-021 Wi-Fi Connected, No Internet | Field Reference</title>
+  <link rel="stylesheet" href="technician.css">
+</head>
+<body class="field-body">
+  <div class="field-frame">
+    <header class="field-header">
+      <span class="module-id">NET-021</span>
+      <h1>Wi-Fi Connected / No Internet</h1>
+      <span class="crumb">Networking / Client connectivity / Windows workstation / Rev 1.0</span>
+    </header>
+
+    <aside class="field-spine">
+      <nav class="field-legend" aria-label="Module structure">
+        <span class="spine-caption">Every module answers</span>
+        <a href="#what" data-k="what"><span>1</span><strong>What happened?</strong></a>
+        <a href="#why" data-k="why"><span>2</span><strong>Why did it happen?</strong></a>
+        <a href="#diag" data-k="diag"><span>3</span><strong>How do I diagnose it?</strong></a>
+        <a href="#fix" data-k="fix"><span>4</span><strong>How do I fix it safely?</strong></a>
+        <a href="#doc" data-k="doc"><span>5</span><strong>How do I document it?</strong></a>
+      </nav>
+      <nav class="field-tree" aria-label="Network modules">
+        <span class="spine-caption">Network modules</span>
+        <span class="tree-group">Client access</span>
+        <a href="#"><span>NET-019</span> No Wi-Fi networks shown</a>
+        <a href="#"><span>NET-020</span> Cannot join SSID</a>
+        <a class="active" href="technician-wifi.html" aria-current="page"><span>NET-021</span> Wi-Fi no internet</a>
+        <span class="tree-group">Name resolution</span>
+        <a href="#"><span>NET-031</span> DNS lookup failing</a>
+        <a href="#"><span>NET-032</span> Website works by IP only</a>
+        <span class="tree-group">Escalation</span>
+        <a href="#"><span>NET-041</span> Gateway unreachable</a>
+        <a href="#"><span>NET-042</span> ISP outage suspected</a>
+        <p><b>Use:</b> start with local checks. If IP works but names fail, suspect DNS.</p>
+      </nav>
+      <a class="field-back" href="technician-index.html">Back to runbook</a>
+    </aside>
+
+    <section class="field-zone field-what" id="what">
+      <span class="field-label">1 / What happened</span>
+      <div class="what-row">
+        <p class="symptom">The device shows Wi-Fi connected, but websites and internet apps do not load.</p>
+        <dl>
+          <dt>Symptoms</dt><dd>Wi-Fi connected / browser timeout / Teams disconnected</dd>
+          <dt>Applies to</dt><dd>Windows laptop or desktop on wireless network</dd>
+          <dt>First rule</dt><dd>Wi-Fi connected does not prove internet access</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section class="field-zone field-why" id="why">
+      <span class="field-label">2 / Why it happens</span>
+      <p>Most cases are DNS failure, a gateway problem, or the device being on the wrong network path.</p>
+      <div class="cause-tabs" role="tablist">
+        <button class="cause-tab" type="button" aria-selected="true" data-cause="dns">DNS failure <span>common</span></button>
+        <button class="cause-tab" type="button" aria-selected="false" data-cause="gateway">Gateway issue <span>common</span></button>
+        <button class="cause-tab" type="button" aria-selected="false" data-cause="portal">Captive portal / SSID <span>check</span></button>
+      </div>
+    </section>
+
+    <div class="field-work">
+      <section class="field-zone field-diag" id="diag">
+        <div class="cause-panel" data-cause-panel="dns">
+          <span class="field-label">3 / Diagnose</span><h2>Is DNS failing?</h2>
+          <ol class="field-tests">
+            <li><b>Check IP settings.</b><span>Run <code>ipconfig /all</code>. Record IP address, gateway, and DNS servers.</span></li>
+            <li><b>Ping the gateway.</b><span>If this fails, treat it as a local network path issue.</span></li>
+            <li><b>Ping an internet IP.</b><span>If <code>8.8.8.8</code> works but websites fail, suspect DNS.</span></li>
+            <li><b>Test name lookup.</b><span>Run <code>nslookup example.com</code> and record the result.</span></li>
+          </ol>
+        </div>
+        <div class="cause-panel" data-cause-panel="gateway" hidden>
+          <span class="field-label">3 / Diagnose</span><h2>Is the gateway reachable?</h2>
+          <ol class="field-tests">
+            <li><b>Find the default gateway.</b><span>Use <code>ipconfig /all</code>. Do not guess the address.</span></li>
+            <li><b>Ping the gateway.</b><span>If it fails, the device may not be reaching the router.</span></li>
+            <li><b>Compare another device.</b><span>If several devices fail, escalate the network or ISP path.</span></li>
+            <li><b>Check Wi-Fi signal and SSID.</b><span>Weak signal or the wrong network can look like no internet.</span></li>
+          </ol>
+        </div>
+        <div class="cause-panel" data-cause-panel="portal" hidden>
+          <span class="field-label">3 / Diagnose</span><h2>Is the user on the wrong network?</h2>
+          <ol class="field-tests">
+            <li><b>Confirm SSID.</b><span>Check the expected network name.</span></li>
+            <li><b>Open a plain HTTP test page.</b><span>Captive portals often redirect the first browser request.</span></li>
+            <li><b>Check VPN or filtering status.</b><span>Disconnect or bypass only if policy allows.</span></li>
+            <li><b>Ask where the user is.</b><span>Guest, hotel, and campus Wi-Fi often need a sign-in step.</span></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="field-zone field-fix" id="fix">
+        <div class="cause-panel" data-fix-panel="dns">
+          <span class="field-label">4 / Fix safely</span><h2>Restore name resolution</h2>
+          <div class="field-warning">Do not change router-wide DNS settings without approval.</div>
+          <ol class="field-steps">
+            <li>Flush resolver cache: <code>ipconfig /flushdns</code>.</li>
+            <li>Renew DHCP lease: <code>ipconfig /release</code>, then <code>ipconfig /renew</code>.</li>
+            <li>Restart browser and retest.</li>
+            <li>If DNS still fails, escalate with DNS server values.</li>
+            <li><b>Verify:</b> websites load by name.</li>
+          </ol>
+        </div>
+        <div class="cause-panel" data-fix-panel="gateway" hidden>
+          <span class="field-label">4 / Fix safely</span><h2>Restore local path</h2>
+          <div class="field-warning">Do not reset shared network equipment without approval.</div>
+          <ol class="field-steps">
+            <li>Reconnect to the correct Wi-Fi network.</li>
+            <li>Move closer to the access point if signal is weak.</li>
+            <li>Renew DHCP lease after confirming the correct SSID.</li>
+            <li>Escalate if gateway remains unreachable.</li>
+            <li><b>Verify:</b> gateway and internet IP both respond.</li>
+          </ol>
+        </div>
+        <div class="cause-panel" data-fix-panel="portal" hidden>
+          <span class="field-label">4 / Fix safely</span><h2>Complete safe access path</h2>
+          <div class="field-warning">Never enter credentials into an unexpected page without confirming it is trusted.</div>
+          <ol class="field-steps">
+            <li>Join the correct SSID.</li>
+            <li>Open the approved captive portal if expected.</li>
+            <li>Disconnect VPN only if policy allows.</li>
+            <li>Restart browser and retest.</li>
+            <li><b>Verify:</b> Teams/email/browser all reconnect.</li>
+          </ol>
+        </div>
+      </section>
+    </div>
+
+    <section class="field-zone field-doc" id="doc">
+      <div><span class="field-label">5 / Document it</span><p>Record checks, result, fix, and what was not changed.</p></div>
+      <pre id="ticketText"></pre>
+      <button class="copy-ticket" type="button">Copy note</button>
+    </section>
+  </div>
+  <script>
+    const tabs = document.querySelectorAll(".cause-tab");
+    const panels = document.querySelectorAll("[data-cause-panel], [data-fix-panel]");
+    const ticket = document.querySelector("#ticketText");
+    const notes = {
+      dns: `User reported Wi-Fi connected but websites timing out.
+Confirmed device connected to expected SSID.
+Confirmed DHCP lease, default gateway, and DNS servers.
+Gateway reachable and ping to 8.8.8.8 successful.
+DNS lookup failed with nslookup.
+Flushed DNS resolver cache and renewed DHCP lease.
+Websites loaded successfully after retest.
+No router settings changed.`,
+      gateway: `User reported Wi-Fi connected but no internet access.
+Confirmed expected SSID and DHCP lease.
+Gateway did not respond to ping.
+Renewed DHCP lease and retested.
+Gateway remained unreachable.
+No router or access point settings changed.
+Escalated to network support.`,
+      portal: `User reported Wi-Fi connected but internet apps offline.
+Confirmed user was connected to guest/captive SSID.
+Browser redirected to expected sign-in portal.
+User completed approved access step.
+Teams, email, and browser reconnected after retest.
+No credentials collected by technician.`
+    };
+    function selectCause(cause) {
+      tabs.forEach((tab) => tab.setAttribute("aria-selected", String(tab.dataset.cause === cause)));
+      panels.forEach((panel) => {
+        const key = panel.dataset.causePanel || panel.dataset.fixPanel;
+        panel.hidden = key !== cause;
+      });
+      ticket.textContent = notes[cause];
+    }
+    tabs.forEach((tab) => tab.addEventListener("click", () => selectCause(tab.dataset.cause)));
+    selectCause("dns");
+    document.querySelector(".copy-ticket").addEventListener("click", async (event) => {
+      await navigator.clipboard?.writeText(ticket.textContent);
+      event.currentTarget.textContent = "Copied";
+      setTimeout(() => { event.currentTarget.textContent = "Copy note"; }, 1200);
+    });
+  </script>
+</body>
+</html>

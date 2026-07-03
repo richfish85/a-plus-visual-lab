@@ -24,6 +24,11 @@ An app crash might be a software issue, an OS update issue, or a user profile is
 
 Use tickets `APLUS-005` and `APLUS-006`.
 
+Simplified pilot versions:
+
+- [APLUS-005: App opens, then crashes](../pilot-modules/aplus-005-app-crashes-after-launch.md)
+- [APLUS-006: Ticket closed, no resolution notes](../pilot-modules/aplus-006-ticket-closed-without-notes.md)
+
 Steps:
 
 1. Pick one ticket.

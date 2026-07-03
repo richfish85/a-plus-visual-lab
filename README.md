@@ -17,9 +17,60 @@ Current exam target:
 - CompTIA A+ Core 1: 220-1201
 - CompTIA A+ Core 2: 220-1202
 
+Current content direction:
+
+- write documentation for a new IT technician
+- explain each issue at grade 10 reading level
+- answer exactly five questions per module
+- use safe checks and ticket-ready notes
+- keep pages dense, practical, and easy to scan under pressure
+
+Five-question module pattern:
+
+```text
+What happened?
+Why did it happen?
+How do I diagnose it?
+How do I fix it safely?
+How do I document it?
+```
+
+Pilot module:
+
+- [Pilot modules index](pilot-modules/README.md)
+- [Technician field manual demo](app/technician-index.html)
+
+Current starter modules:
+
+- No Display
+- Wi-Fi Connected / No Internet
+- Windows VM Slow / Low Disk
+- Suspicious Sign-In Email
+- App Opens / Then Crashes
+- Ticket Closed / No Notes
+
+## Case Study
+
+This project turns CompTIA A+ study material into a technician-facing field manual. Instead of presenting concepts as long study notes, each module starts with a realistic support symptom and guides a new technician through five steps: what happened, why it happened, how to diagnose it, how to fix it safely, and how to document it. The goal is to show practical helpdesk judgement: isolate the issue, avoid unsafe changes, collect evidence, and leave a clear ticket note for the next person.
+
 Example:
 
 Instead of only reading about DNS, the learner gets a ticket, checks an IP card, traces a diagram, changes one setting in a VM or router simulator, and documents the result.
+
+## Scaling Plan
+
+The first version should stay streamlined. Each A+ topic should become a short technician module, not a textbook chapter.
+
+Recommended content model:
+
+- one page per support scenario
+- three likely causes per page
+- four safe diagnostic checks per cause
+- five safe fix steps per cause
+- one ticket note template per cause
+- links to official references and deeper reading where needed
+
+Do not build a full editor until the module format is stable. For now, write modules as source files and keep the app static. If the project grows into a large reusable knowledge base, then convert it into a small web app with structured module data, search, filtering, and an edit workflow.
 
 ## Why
 
@@ -68,9 +119,20 @@ a-plus-visual-lab/
   visual-assets.md
   app/
     index.html
+    technician-index.html
+    technician-display.html
+    technician-wifi.html
+    technician-vm-storage.html
+    technician-phishing.html
+    technician-app-crash.html
+    technician-ticket-notes.html
+    technician.css
     styles.css
     app.js
     README.md
+  pilot-modules/
+    README.md
+    aplus-002-wifi-connected-no-websites.md
   assets/
     generated/
     sourced/

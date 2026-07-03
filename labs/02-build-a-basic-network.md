@@ -27,6 +27,10 @@ A laptop can show connected Wi-Fi but still fail to load websites if DNS is wron
 
 Use ticket `APLUS-002`.
 
+Simplified pilot version:
+
+- [APLUS-002: Wi-Fi connected but websites do not load](../pilot-modules/aplus-002-wifi-connected-no-websites.md)
+
 Steps:
 
 1. Read the ticket.

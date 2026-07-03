@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Technician Runbook | A+ Visual Lab</title>
+  <link rel="stylesheet" href="technician.css">
+</head>
+<body class="field-body runbook-body">
+  <div class="runbook-frame">
+    <header class="field-header runbook-header">
+      <span class="module-id">RUNBOOK</span>
+      <h1>Technician Field Manual</h1>
+      <span class="crumb">A+ Visual Lab / Helpdesk documentation / Rev 1.0</span>
+    </header>
+
+    <aside class="field-spine runbook-spine">
+      <nav class="field-tree">
+        <span class="spine-caption">Runbook sections</span>
+        <span class="tree-group">Hardware</span>
+        <a href="technician-display.html"><span>HW-014</span> No display</a>
+        <span class="tree-group">Networking</span>
+        <a href="technician-wifi.html"><span>NET-021</span> Wi-Fi connected / no internet</a>
+        <span class="tree-group">Operating systems</span>
+        <a href="technician-vm-storage.html"><span>OS-033</span> VM slow / low disk</a>
+        <span class="tree-group">Security</span>
+        <a href="technician-phishing.html"><span>SEC-018</span> Suspicious sign-in email</a>
+        <span class="tree-group">Applications</span>
+        <a href="technician-app-crash.html"><span>APP-024</span> App crashes after launch</a>
+        <span class="tree-group">Documentation</span>
+        <a href="technician-ticket-notes.html"><span>DOC-006</span> Ticket closed / no notes</a>
+      </nav>
+
+      <a class="field-back" href="index.html">Back to lab</a>
+    </aside>
+
+    <section class="field-zone runbook-brief">
+      <span class="field-label">Purpose</span>
+      <p class="symptom">Fast documentation for a new IT technician: identify the symptom, test safely, fix one thing at a time, and leave a useful ticket note.</p>
+      <dl>
+        <dt>Audience</dt><dd>Junior helpdesk / technician</dd>
+        <dt>Format</dt><dd>Five questions per module</dd>
+        <dt>Style</dt><dd>Dense field reference</dd>
+      </dl>
+    </section>
+
+    <section class="field-zone runbook-flow">
+      <span class="field-label">Workflow</span>
+      <ol>
+        <li><b>Read the symptom.</b><span>Match the user report to the closest module.</span></li>
+        <li><b>Select the likely cause.</b><span>Use the tabs inside the module to keep diagnosis narrow.</span></li>
+        <li><b>Run safe checks.</b><span>Collect evidence before changing settings.</span></li>
+        <li><b>Apply the smallest fix.</b><span>Avoid destructive or unsupported repair steps.</span></li>
+        <li><b>Copy the note.</b><span>Document what was checked, changed, and verified.</span></li>
+      </ol>
+    </section>
+
+    <main class="field-zone module-register" id="module-register">
+      <div class="register-title">
+        <span class="field-label">Module register</span>
+        <p>Six starter cases covering helpdesk, development-adjacent app support, and cybersecurity awareness.</p>
+      </div>
+
+      <div class="module-table" role="list" aria-label="Technician modules">
+        <a class="module-row" href="technician-display.html" role="listitem">
+          <span class="module-code">HW-014</span>
+          <strong>No Display</strong>
+          <span>Desktop powers on but monitor shows no image.</span>
+          <em>Hardware</em>
+          <b>Open</b>
+        </a>
+        <a class="module-row" href="technician-wifi.html" role="listitem">
+          <span class="module-code">NET-021</span>
+          <strong>Wi-Fi Connected / No Internet</strong>
+          <span>Device is on Wi-Fi but Teams and browser fail.</span>
+          <em>Networking</em>
+          <b>Open</b>
+        </a>
+        <a class="module-row" href="technician-vm-storage.html" role="listitem">
+          <span class="module-code">OS-033</span>
+          <strong>Windows VM Slow / Low Disk</strong>
+          <span>VM is sluggish and storage warnings are visible.</span>
+          <em>Operating systems</em>
+          <b>Open</b>
+        </a>
+        <a class="module-row" href="technician-phishing.html" role="listitem">
+          <span class="module-code">SEC-018</span>
+          <strong>Suspicious Sign-In Email</strong>
+          <span>User received urgent account verification email.</span>
+          <em>Security</em>
+          <b>Open</b>
+        </a>
+        <a class="module-row" href="technician-app-crash.html" role="listitem">
+          <span class="module-code">APP-024</span>
+          <strong>App Opens / Then Crashes</strong>
+          <span>Application launches and closes before use.</span>
+          <em>Applications</em>
+          <b>Open</b>
+        </a>
+        <a class="module-row" href="technician-ticket-notes.html" role="listitem">
+          <span class="module-code">DOC-006</span>
+          <strong>Ticket Closed / No Notes</strong>
+          <span>Ticket has no useful resolution history.</span>
+          <em>Documentation</em>
+          <b>Open</b>
+        </a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

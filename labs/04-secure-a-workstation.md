@@ -25,6 +25,10 @@ A user reports a suspicious sign-in email. The safe action is to inspect signs, 
 
 Use ticket `APLUS-004`.
 
+Simplified pilot version:
+
+- [APLUS-004: Suspicious sign-in email](../pilot-modules/aplus-004-suspicious-sign-in-email.md)
+
 Steps:
 
 1. Read the suspicious email scenario.

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OS-033 Windows VM Slow, Low Disk Space | Field Reference</title>
+  <link rel="stylesheet" href="technician.css">
+</head>
+<body class="field-body">
+  <div class="field-frame">
+    <header class="field-header"><span class="module-id">OS-033</span><h1>Windows VM Slow / Low Disk</h1><span class="crumb">Operating systems / VM support / Performance and storage / Rev 1.0</span></header>
+    <aside class="field-spine">
+      <nav class="field-legend"><span class="spine-caption">Every module answers</span><a href="#what" data-k="what"><span>1</span><strong>What happened?</strong></a><a href="#why" data-k="why"><span>2</span><strong>Why did it happen?</strong></a><a href="#diag" data-k="diag"><span>3</span><strong>How do I diagnose it?</strong></a><a href="#fix" data-k="fix"><span>4</span><strong>How do I fix it safely?</strong></a><a href="#doc" data-k="doc"><span>5</span><strong>How do I document it?</strong></a></nav>
+      <nav class="field-tree"><span class="spine-caption">OS modules</span><span class="tree-group">Performance</span><a href="#"><span>OS-031</span> Slow startup</a><a href="#"><span>OS-032</span> App hangs</a><a class="active" href="technician-vm-storage.html"><span>OS-033</span> VM slow / low disk</a><span class="tree-group">Updates</span><a href="#"><span>OS-041</span> Updates failing</a><a href="#"><span>OS-042</span> Restart loop</a><span class="tree-group">Storage</span><a href="#"><span>OS-051</span> Disk full</a><a href="#"><span>OS-052</span> Temp cleanup</a><p><b>Use:</b> change one thing at a time. Snapshot before risky VM changes.</p></nav>
+      <a class="field-back" href="technician-index.html">Back to runbook</a>
+    </aside>
+    <section class="field-zone field-what" id="what"><span class="field-label">1 / What happened</span><div class="what-row"><p class="symptom">A Windows virtual machine is slow and Windows reports low disk space.</p><dl><dt>Symptoms</dt><dd>Slow boot / red storage bar / updates may fail</dd><dt>Applies to</dt><dd>Windows VM or safe lab machine</dd><dt>First rule</dt><dd>Snapshot or confirm restore path before cleanup</dd></dl></div></section>
+    <section class="field-zone field-why" id="why"><span class="field-label">2 / Why it happens</span><p>Most cases are low free space, too many startup tasks, or updates stuck because space is low.</p><div class="cause-tabs"><button class="cause-tab" type="button" aria-selected="true" data-cause="storage">Storage full <span>common</span></button><button class="cause-tab" type="button" aria-selected="false" data-cause="startup">Startup load <span>common</span></button><button class="cause-tab" type="button" aria-selected="false" data-cause="updates">Updates stuck <span>check</span></button></div></section>
+    <div class="field-work">
+      <section class="field-zone field-diag" id="diag">
+        <div class="cause-panel" data-cause-panel="storage"><span class="field-label">3 / Diagnose</span><h2>Is disk space the bottleneck?</h2><ol class="field-tests"><li><b>Open Storage settings.</b><span>Record free space in GB and percent.</span></li><li><b>Check temporary files.</b><span>Use Windows cleanup categories. Do not browse-delete system folders.</span></li><li><b>Check host storage.</b><span>A VM can slow down if the host disk is nearly full.</span></li><li><b>Check VM snapshots.</b><span>Old snapshots can grow large and slow the VM.</span></li></ol></div>
+        <div class="cause-panel" data-cause-panel="startup" hidden><span class="field-label">3 / Diagnose</span><h2>Are startup apps slowing boot?</h2><ol class="field-tests"><li><b>Open Task Manager.</b><span>Check CPU, memory, disk, and Startup apps.</span></li><li><b>Sort by startup impact.</b><span>Look for high-impact non-essential apps.</span></li><li><b>Ask what changed.</b><span>Recent installs, agents, or updates can explain new slowness.</span></li><li><b>Restart and time it.</b><span>Confirm the symptom is repeatable before changing settings.</span></li></ol></div>
+        <div class="cause-panel" data-cause-panel="updates" hidden><span class="field-label">3 / Diagnose</span><h2>Are updates pending or stuck?</h2><ol class="field-tests"><li><b>Open Windows Update.</b><span>Record pending, failed, or paused updates.</span></li><li><b>Check restart requirement.</b><span>Some updates wait for reboot before cleanup helps.</span></li><li><b>Check free space.</b><span>Low disk space can block update download and install.</span></li><li><b>Record error codes.</b><span>Escalation needs exact update name and error text.</span></li></ol></div>
+      </section>
+      <section class="field-zone field-fix" id="fix">
+        <div class="cause-panel" data-fix-panel="storage"><span class="field-label">4 / Fix safely</span><h2>Free safe storage</h2><div class="field-warning">Do not delete unknown system folders, user files, or security tools.</div><ol class="field-steps"><li>Take a VM snapshot or confirm restore path.</li><li>Use Windows Storage cleanup for temporary files.</li><li>Empty Recycle Bin only if approved.</li><li>Escalate if the VM disk needs resizing.</li><li><b>Verify:</b> free space improves and VM restarts.</li></ol></div>
+        <div class="cause-panel" data-fix-panel="startup" hidden><span class="field-label">4 / Fix safely</span><h2>Reduce startup load</h2><div class="field-warning">Do not disable antivirus, backup, remote support, or management tools.</div><ol class="field-steps"><li>Disable only clearly unnecessary startup apps.</li><li>Restart and time startup again.</li><li>Document every disabled item.</li><li>Re-enable anything that causes problems.</li><li><b>Verify:</b> startup improves without losing required functions.</li></ol></div>
+        <div class="cause-panel" data-fix-panel="updates" hidden><span class="field-label">4 / Fix safely</span><h2>Complete updates safely</h2><div class="field-warning">Do not interrupt updates while they are installing or restarting.</div><ol class="field-steps"><li>Free enough disk space first.</li><li>Install pending updates.</li><li>Restart when prompted.</li><li>Record failed update codes if unresolved.</li><li><b>Verify:</b> update page shows current status or a known error.</li></ol></div>
+      </section>
+    </div>
+    <section class="field-zone field-doc" id="doc"><div><span class="field-label">5 / Document it</span><p>Record before/after state and every changed setting.</p></div><pre id="ticketText"></pre><button class="copy-ticket" type="button">Copy note</button></section>
+  </div>
+  <script>
+    const tabs=document.querySelectorAll(".cause-tab"),panels=document.querySelectorAll("[data-cause-panel], [data-fix-panel]"),ticket=document.querySelector("#ticketText");
+    const notes={storage:`User reported Windows VM slow to start and low on disk space.
+Confirmed storage warning in Windows settings.
+Recorded free space before cleanup.
+Checked temporary files, host storage, and snapshots.
+Removed temporary files through Storage settings.
+Restarted VM and confirmed free space and startup improved.
+No system folders, user files, or security tools changed.`,startup:`User reported Windows VM slow to start.
+Confirmed symptom after restart.
+Reviewed Task Manager startup apps and resource use.
+Disabled approved non-essential startup items.
+Restarted and confirmed improved startup time.
+No security or management tools disabled.`,updates:`User reported Windows VM slow and updates failing.
+Checked Windows Update status, error text, and free disk space.
+Installed pending updates after cleanup.
+Restarted VM and retested.
+Recorded update status in ticket.
+No unsupported repair actions taken.`};
+    function selectCause(cause){tabs.forEach(t=>t.setAttribute("aria-selected",String(t.dataset.cause===cause)));panels.forEach(p=>{const key=p.dataset.causePanel||p.dataset.fixPanel;p.hidden=key!==cause});ticket.textContent=notes[cause]}
+    tabs.forEach(t=>t.addEventListener("click",()=>selectCause(t.dataset.cause)));selectCause("storage");
+    document.querySelector(".copy-ticket").addEventListener("click",async e=>{await navigator.clipboard?.writeText(ticket.textContent);e.currentTarget.textContent="Copied";setTimeout(()=>e.currentTarget.textContent="Copy note",1200)});
+  </script>
+</body>
+</html>

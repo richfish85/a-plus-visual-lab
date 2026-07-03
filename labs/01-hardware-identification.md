@@ -27,6 +27,10 @@ If a desktop powers on with no display, you need to recognize video cables, RAM 
 
 Use ticket `APLUS-001`.
 
+Simplified pilot version:
+
+- [APLUS-001: Desktop powers on, no display](../pilot-modules/aplus-001-desktop-powers-on-no-display.md)
+
 Steps:
 
 1. Read the ticket.
