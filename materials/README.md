@@ -25,6 +25,7 @@ The landing page can offer a small `Read` button. This folder holds the deeper e
 Primary files:
 
 - [course-sequence/README.md](course-sequence/README.md) is the main topic index.
+- [aplus-expansion/README.md](aplus-expansion/README.md) is the scaling plan for complete A+ coverage.
 - [../app/wiki.html](../app/wiki.html) is the in-app wiki reader for the material pages.
 - [../datasets/course-sequence-map.csv](../datasets/course-sequence-map.csv) maps each topic to a CompTIA area, app route, practice action, and content status.
 - [../diagrams/material-coverage-map.md](../diagrams/material-coverage-map.md) shows what is drafted and what still needs work.

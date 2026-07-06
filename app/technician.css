@@ -370,13 +370,14 @@ pre {
 .field-frame {
   display: grid;
   grid-template-columns: 172px minmax(0, 1fr);
-  grid-template-rows: auto auto auto minmax(0, 1fr) auto;
+  grid-template-rows: auto auto auto minmax(0, 1fr) auto auto;
   grid-template-areas:
     "head head"
     "spine what"
     "spine why"
     "spine work"
-    "spine doc";
+    "spine doc"
+    "spine related";
   gap: 6px;
   width: min(1280px, 100%);
   height: 100vh;
@@ -614,10 +615,16 @@ pre {
   border-top: 3px solid #5b4a9e;
 }
 
+.field-related {
+  grid-area: related;
+  border-top: 3px solid #8f968f;
+}
+
 .field-why .field-label { background: #b4540a; }
 .field-diag .field-label { background: #0f5c9e; }
 .field-fix .field-label { background: #1c6b45; }
 .field-doc .field-label { background: #5b4a9e; }
+.field-related .field-label { background: #4a5361; }
 
 .what-row {
   display: flex;
@@ -815,6 +822,73 @@ pre {
   cursor: pointer;
 }
 
+.related-title {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  margin-bottom: 6px;
+}
+
+.related-title p {
+  margin: 0;
+  color: #4a5361;
+  font-size: 11.5px;
+}
+
+.related-table {
+  display: grid;
+  gap: 3px;
+}
+
+.related-row {
+  display: grid;
+  grid-template-columns: 72px minmax(140px, .65fr) minmax(190px, 1fr) 60px;
+  gap: 8px;
+  align-items: center;
+  min-height: 32px;
+  padding: 5px 7px;
+  border: 1px solid #c9cdc9;
+  border-left: 3px solid #8f968f;
+  border-radius: 3px;
+  color: #171b21;
+  background: #fbfbfa;
+  text-decoration: none;
+}
+
+.related-row:hover {
+  border-color: #0f5c9e;
+  border-left-color: #0f5c9e;
+  background: #f5f8fb;
+}
+
+.related-row span,
+.related-row em,
+.related-row b {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 10px;
+  font-style: normal;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.related-row span,
+.related-row em {
+  color: #4a5361;
+}
+
+.related-row strong {
+  font-size: 12.5px;
+  line-height: 1.1;
+}
+
+.related-row b {
+  justify-self: end;
+  padding: 2px 5px;
+  border-radius: 2px;
+  color: #fbfbfa;
+  background: #4a5361;
+}
+
 @media (max-width: 860px) {
   .field-body {
     overflow: auto;
@@ -830,7 +904,8 @@ pre {
       "what"
       "why"
       "work"
-      "doc";
+      "doc"
+      "related";
   }
 
   .field-header {
@@ -860,6 +935,18 @@ pre {
 
   .cause-tabs {
     flex-wrap: wrap;
+  }
+
+  .related-title {
+    display: block;
+  }
+
+  .related-row {
+    grid-template-columns: 68px minmax(0, 1fr) 50px;
+  }
+
+  .related-row em {
+    display: none;
   }
 }
 

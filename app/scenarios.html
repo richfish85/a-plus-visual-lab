@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scenario Register | A+ Visual Lab</title>
+  <link rel="stylesheet" href="technician.css">
+</head>
+<body class="field-body runbook-body">
+  <div class="runbook-frame">
+    <header class="field-header runbook-header">
+      <span class="module-id">SCENARIOS</span>
+      <h1>A+ Scenario Register</h1>
+      <span class="crumb">A+ Visual Lab / Expansion planning / Static register / Rev 1.0</span>
+    </header>
+
+    <aside class="field-spine runbook-spine">
+      <nav class="field-tree">
+        <span class="spine-caption">Scenario groups</span>
+        <span class="tree-group">Core 1</span>
+        <a href="#mobile"><span>MOB</span> Mobile Devices</a>
+        <a href="#networking"><span>NET</span> Networking</a>
+        <a href="#hardware"><span>HW</span> Hardware</a>
+        <a href="#virtualization"><span>VC</span> Virtualization / Cloud</a>
+        <a href="#troubleshooting"><span>HNT</span> Hardware / Network TS</a>
+        <span class="tree-group">Core 2</span>
+        <a href="#os"><span>OS</span> Operating Systems</a>
+        <a href="#security"><span>SEC</span> Security</a>
+        <a href="#software"><span>APP</span> Software Troubleshooting</a>
+        <a href="#ops"><span>OPS</span> Operational Procedures</a>
+      </nav>
+      <a class="field-back" href="technician-index.html">Back to runbook</a>
+    </aside>
+
+    <section class="field-zone runbook-brief">
+      <span class="field-label">Purpose</span>
+      <p class="symptom">A static register of scenario candidates for scaling the field manual without adding CRUD.</p>
+      <dl>
+        <dt>Use</dt><dd>Pick future modules</dd>
+        <dt>Format</dt><dd>Five scenarios per A+ domain</dd>
+        <dt>Status</dt><dd>Planning rows, not final pages</dd>
+      </dl>
+    </section>
+
+    <section class="field-zone runbook-flow">
+      <span class="field-label">Selection</span>
+      <ol>
+        <li><b>Choose a row.</b><span>Prefer realistic helpdesk symptoms.</span></li>
+        <li><b>Check safety.</b><span>Use lab-safe or simulated actions.</span></li>
+        <li><b>Write five questions.</b><span>Keep the existing module pattern.</span></li>
+        <li><b>Add references last.</b><span>Keep links separate from the main flow.</span></li>
+        <li><b>Promote only strong cases.</b><span>Do not turn every topic into a visual page.</span></li>
+      </ol>
+    </section>
+
+    <main class="field-zone module-register" id="scenario-register">
+      <div class="register-title">
+        <span class="field-label">Scenario register</span>
+        <p>Rows link back to this static register until full scenario pages exist.</p>
+      </div>
+
+      <div class="module-table">
+        <a class="module-row" id="mob-011" href="#mob-011"><span class="module-code">MOB-011</span><strong>Laptop Not Charging</strong><span>Laptop runs on battery but will not charge.</span><em id="mobile">Mobile Devices</em><b>Plan</b></a>
+        <a class="module-row" id="mob-012" href="#mob-012"><span class="module-code">MOB-012</span><strong>Dock Connected, No External Display</strong><span>Dock works for keyboard but not monitor.</span><em>Mobile Devices</em><b>Plan</b></a>
+        <a class="module-row" id="mob-013" href="#mob-013"><span class="module-code">MOB-013</span><strong>Phone Cannot Sync Work Email</strong><span>Mail app asks for password or stops syncing.</span><em>Mobile Devices</em><b>Plan</b></a>
+        <a class="module-row" id="mob-014" href="#mob-014"><span class="module-code">MOB-014</span><strong>Bluetooth Headset Pairs But No Audio</strong><span>Headset connected but sound uses laptop speakers.</span><em>Mobile Devices</em><b>Plan</b></a>
+        <a class="module-row" id="mob-015" href="#mob-015"><span class="module-code">MOB-015</span><strong>Laptop Touchpad Not Working</strong><span>User can type but cursor will not move.</span><em>Mobile Devices</em><b>Plan</b></a>
+
+        <a class="module-row" id="net-021" href="#net-021"><span class="module-code">NET-021</span><strong>Wi-Fi Connected / No Internet</strong><span>Device is on Wi-Fi but websites fail.</span><em id="networking">Networking</em><b>Built</b></a>
+        <a class="module-row" id="net-022" href="#net-022"><span class="module-code">NET-022</span><strong>Website Works By IP Only</strong><span>IP address works but name does not.</span><em>Networking</em><b>Plan</b></a>
+        <a class="module-row" id="net-023" href="#net-023"><span class="module-code">NET-023</span><strong>Cannot Reach Shared Printer</strong><span>User can browse web but cannot print.</span><em>Networking</em><b>Plan</b></a>
+        <a class="module-row" id="net-024" href="#net-024"><span class="module-code">NET-024</span><strong>Ethernet Connected But No Network</strong><span>Cable is plugged in but no network access.</span><em>Networking</em><b>Plan</b></a>
+        <a class="module-row" id="net-025" href="#net-025"><span class="module-code">NET-025</span><strong>VPN Connected But Internal App Fails</strong><span>VPN says connected but internal site times out.</span><em>Networking</em><b>Plan</b></a>
+
+        <a class="module-row" id="hw-014" href="#hw-014"><span class="module-code">HW-014</span><strong>No Display</strong><span>Desktop has power but monitor shows no image.</span><em id="hardware">Hardware</em><b>Built</b></a>
+        <a class="module-row" id="hw-018" href="#hw-018"><span class="module-code">HW-018</span><strong>USB Device Not Detected</strong><span>Keyboard, mouse, or drive is not recognised.</span><em>Hardware</em><b>Plan</b></a>
+        <a class="module-row" id="hw-019" href="#hw-019"><span class="module-code">HW-019</span><strong>Printer Paper Jam After Clearing</strong><span>Printer still reports jam.</span><em>Hardware</em><b>Plan</b></a>
+        <a class="module-row" id="hw-020" href="#hw-020"><span class="module-code">HW-020</span><strong>New SSD Not Seen</strong><span>Drive installed but not visible in Windows.</span><em>Hardware</em><b>Plan</b></a>
+        <a class="module-row" id="hw-021" href="#hw-021"><span class="module-code">HW-021</span><strong>PC Shuts Down Under Load</strong><span>Device powers off during heavy use.</span><em>Hardware</em><b>Plan</b></a>
+
+        <a class="module-row" id="vc-011" href="#vc-011"><span class="module-code">VC-011</span><strong>VM Slow / Low Disk</strong><span>VM is sluggish and storage warnings appear.</span><em id="virtualization">Virtualization</em><b>Built</b></a>
+        <a class="module-row" id="vc-012" href="#vc-012"><span class="module-code">VC-012</span><strong>VM Has No Network</strong><span>Guest OS boots but cannot reach network.</span><em>Virtualization</em><b>Plan</b></a>
+        <a class="module-row" id="vc-013" href="#vc-013"><span class="module-code">VC-013</span><strong>Snapshot Consumes Disk</strong><span>Host disk fills after repeated snapshots.</span><em>Virtualization</em><b>Plan</b></a>
+        <a class="module-row" id="vc-014" href="#vc-014"><span class="module-code">VC-014</span><strong>Cloud App Sign-In Loop</strong><span>Web app keeps asking user to sign in.</span><em>Virtualization</em><b>Plan</b></a>
+        <a class="module-row" id="vc-015" href="#vc-015"><span class="module-code">VC-015</span><strong>File Sync Stuck</strong><span>Cloud sync client shows pending or error.</span><em>Virtualization</em><b>Plan</b></a>
+
+        <a class="module-row" id="hnt-011" href="#hnt-011"><span class="module-code">HNT-011</span><strong>Random Wi-Fi Drops</strong><span>User disconnects several times per day.</span><em id="troubleshooting">HW/Network TS</em><b>Plan</b></a>
+        <a class="module-row" id="hnt-012" href="#hnt-012"><span class="module-code">HNT-012</span><strong>Slow Network For One User</strong><span>One user reports slow shared resources.</span><em>HW/Network TS</em><b>Plan</b></a>
+        <a class="module-row" id="hnt-013" href="#hnt-013"><span class="module-code">HNT-013</span><strong>Projector Shows Wrong Screen</strong><span>Presentation display is blank or mirrored wrong.</span><em>HW/Network TS</em><b>Plan</b></a>
+        <a class="module-row" id="hnt-014" href="#hnt-014"><span class="module-code">HNT-014</span><strong>Printer Prints Garbled Output</strong><span>Printer produces symbols or wrong layout.</span><em>HW/Network TS</em><b>Plan</b></a>
+        <a class="module-row" id="hnt-015" href="#hnt-015"><span class="module-code">HNT-015</span><strong>POST Beep Or LED Error</strong><span>PC will not boot and shows beep/LED pattern.</span><em>HW/Network TS</em><b>Plan</b></a>
+
+        <a class="module-row" id="os-031" href="#os-031"><span class="module-code">OS-031</span><strong>Windows Update Fails</strong><span>Update downloads but will not install.</span><em id="os">Operating Systems</em><b>Plan</b></a>
+        <a class="module-row" id="os-032" href="#os-032"><span class="module-code">OS-032</span><strong>User Cannot Access Folder</strong><span>User gets access denied on a folder.</span><em>Operating Systems</em><b>Plan</b></a>
+        <a class="module-row" id="os-033" href="#os-033"><span class="module-code">OS-033</span><strong>VM Slow / Low Disk</strong><span>Windows VM is slow and low on space.</span><em>Operating Systems</em><b>Built</b></a>
+        <a class="module-row" id="os-034" href="#os-034"><span class="module-code">OS-034</span><strong>Startup Apps Slow Boot</strong><span>Device takes too long to become usable.</span><em>Operating Systems</em><b>Plan</b></a>
+        <a class="module-row" id="os-035" href="#os-035"><span class="module-code">OS-035</span><strong>Command Works As Admin Only</strong><span>Standard user cannot run a task.</span><em>Operating Systems</em><b>Plan</b></a>
+
+        <a class="module-row" id="sec-018" href="#sec-018"><span class="module-code">SEC-018</span><strong>Suspicious Sign-In Email</strong><span>User receives urgent sign-in email.</span><em id="security">Security</em><b>Built</b></a>
+        <a class="module-row" id="sec-019" href="#sec-019"><span class="module-code">SEC-019</span><strong>MFA Prompt User Did Not Request</strong><span>User gets an unexpected approval prompt.</span><em>Security</em><b>Plan</b></a>
+        <a class="module-row" id="sec-020" href="#sec-020"><span class="module-code">SEC-020</span><strong>USB Drive Found In Office</strong><span>User asks whether to open unknown USB.</span><em>Security</em><b>Plan</b></a>
+        <a class="module-row" id="sec-021" href="#sec-021"><span class="module-code">SEC-021</span><strong>Browser Says Certificate Warning</strong><span>Website shows privacy or certificate warning.</span><em>Security</em><b>Plan</b></a>
+        <a class="module-row" id="sec-022" href="#sec-022"><span class="module-code">SEC-022</span><strong>Malware Pop-Up Scare</strong><span>User sees fake virus warning in browser.</span><em>Security</em><b>Plan</b></a>
+
+        <a class="module-row" id="app-024" href="#app-024"><span class="module-code">APP-024</span><strong>App Opens / Then Crashes</strong><span>Application launches then closes or errors.</span><em id="software">Software TS</em><b>Built</b></a>
+        <a class="module-row" id="app-025" href="#app-025"><span class="module-code">APP-025</span><strong>Browser Keeps Redirecting</strong><span>Browser opens strange pages or search engine.</span><em>Software TS</em><b>Plan</b></a>
+        <a class="module-row" id="app-026" href="#app-026"><span class="module-code">APP-026</span><strong>Email App Not Sending</strong><span>Messages stay in outbox.</span><em>Software TS</em><b>Plan</b></a>
+        <a class="module-row" id="app-027" href="#app-027"><span class="module-code">APP-027</span><strong>Mobile App Crashes After Update</strong><span>Phone app crashes after recent update.</span><em>Software TS</em><b>Plan</b></a>
+        <a class="module-row" id="app-028" href="#app-028"><span class="module-code">APP-028</span><strong>Software Install Blocked</strong><span>User cannot install an approved app.</span><em>Software TS</em><b>Plan</b></a>
+
+        <a class="module-row" id="doc-006" href="#doc-006"><span class="module-code">DOC-006</span><strong>Ticket Closed / No Notes</strong><span>Ticket status is closed but result is unclear.</span><em id="ops">Operational Procedures</em><b>Built</b></a>
+        <a class="module-row" id="ops-011" href="#ops-011"><span class="module-code">OPS-011</span><strong>Escalation Missing Key Facts</strong><span>Tier 2 receives a vague handoff.</span><em>Operational Procedures</em><b>Plan</b></a>
+        <a class="module-row" id="ops-012" href="#ops-012"><span class="module-code">OPS-012</span><strong>Change Made Without Rollback Plan</strong><span>Setting changed and issue got worse.</span><em>Operational Procedures</em><b>Plan</b></a>
+        <a class="module-row" id="ops-013" href="#ops-013"><span class="module-code">OPS-013</span><strong>User Update Overdue</strong><span>User asks for status but ticket has no update.</span><em>Operational Procedures</em><b>Plan</b></a>
+        <a class="module-row" id="ops-014" href="#ops-014"><span class="module-code">OPS-014</span><strong>Screenshot Contains Sensitive Data</strong><span>Evidence includes names, emails, IPs, or key material.</span><em>Operational Procedures</em><b>Plan</b></a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
